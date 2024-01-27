@@ -178,21 +178,14 @@ def cart(request,total=0,quantity=0,cart_items=None):
 @login_required(login_url='login')
 def checkout(request,total=0,quantity=0,cart_items=None):
 
-     if request.method=='POST':
-          first_name=request.POST["first_name"]
-          last_name=request.POST["last_name"]
-          email=request.POST["email"]
-          phone_number=request.POST["phone_number"]
-          address1=request.POST["address1"]
-          city=request.POST["city"]
-          country=request.POST["country"]
-          state=request.POST["state"]
-
      try:
           tax = 0
           g_total = 0
-          cart=Cart.objects.get(cart_id=_cart_id(request))
-          cart_items=CartItem.objects.filter(cart=cart,is_active=True)
+          if request.user.is_authenticated:
+                cart_items = CartItem.objects.filter(user=request.user, is_active=True)
+          else:
+               cart=Cart.objects.get(cart_id=_cart_id(request))
+               cart_items=CartItem.objects.filter(cart=cart,is_active=True)
           
           for item in cart_items:
                total+=item.quantity*item.product.price

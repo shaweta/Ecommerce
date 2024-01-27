@@ -151,3 +151,11 @@ EMAIL_PORT=587
 EMAIL_HOST_USER="reetsingh6678@gmail.com"
 EMAIL_HOST_PASSWORD="dhmh cyno iaxi yddg"
 EMAIL_USE_TLS= True
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
+
+# settings.py
+PAYPAL_CLIENT_ID = 'AYYFu9_quzKxVJxmDh6YIVOKmuv3nRHLZEM0L2sdkm43YHNtQNtyC8-AwzsXerGNi3qePxGP5hnSSvUx'
+PAYPAL_CLIENT_SECRET = 'EGiOpyLtq-WIs1DYq0g_hQFeBkA3yA9s3RqsscgDRIo7rQXMkq5Shbg1mBEHS_IBMhXwdNxgNZ26OoxV'
+PAYPAL_MODE = 'sandbox'  # sandbox or live
+
