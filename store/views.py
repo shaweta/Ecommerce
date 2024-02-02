@@ -97,8 +97,5 @@ def submit_review(request,product_id):
                 return redirect(url)
 
 
-def dashboard(request):
-    orders=Order.objects.filter(user_id=request.user,is_ordered=True).order_by('-created_at')
-    orders.count()
-    return render(request,"accounts/dashboard.html")
+
     

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Account
+from .models import Account,UserProfile
 from django.contrib.auth.admin import UserAdmin
 
 class AccountAdmin(UserAdmin):
@@ -10,4 +10,9 @@ class AccountAdmin(UserAdmin):
     filter_horizontal=()
     list_filter=()
     fieldsets=()
+
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display=['user', 'city', 'state', 'country']
+    
+admin.site.register(UserProfile,UserProfileAdmin)
 admin.site.register(Account,AccountAdmin)
