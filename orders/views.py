@@ -75,7 +75,6 @@ def place_order(request, total=0, quantity=0,):
 
 def payments(request):
     body = json.loads(request.body)
-    print(body)
     order = Order.objects.get(user=request.user, is_ordered=False, order_number=body['orderID'])
 
     # Store transaction details inside Payment model
@@ -127,7 +126,6 @@ def payments(request):
         'order': order,
     })
     to_email = request.user.email
-    print(to_email)
     send_email = EmailMessage(mail_subject, message, to=[to_email])
     send_email.send()
 
@@ -141,11 +139,10 @@ def payments(request):
 def order_complete(request):
     order_number=request.GET.get("order_number")
     transID=request.GET.get("payment_id")
-    print(order_number,transID)
+    
     try:
         order = Order.objects.get(order_number=order_number, is_ordered=True)
         ordered_products = OrderProduct.objects.filter(order_id=order.id)
-        print(order,ordered_products)
 
         subtotal = 0
         for i in ordered_products:

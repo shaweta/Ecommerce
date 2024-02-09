@@ -6,10 +6,10 @@
 <aside class="col-md-3">
 		<!--   SIDEBAR   -->
 		<ul class="list-group">
-			<a class="list-group-item {% if '/dashboard/' == request.path %}active{% endif %}" href="{% url 'dashboard' %}"> My dashboard</a>
+			<a class="list-group-item {% if '/dashboard/' in request.path %}active{% endif %}" href="{% url 'dashboard' %}"> My dashboard</a>
 			<a class="list-group-item {% if '/myorders/' in request.path %}active{% endif %}" href="{% url 'myorders' %}"> My orders </a>
             <a class="list-group-item {% if '/editProfile/' in request.path %}active{% endif %}" href="{% url 'editProfile' %}"> Edit Profile </a>
-			<a class="list-group-item {% if '/changePassword/' in request.path %}active{% endif %}" href="{% url 'changePassword' %}">Change Password </a>
+			<a class="list-group-item {% if '/changepassword/' in request.path %}active{% endif %}" href="{% url 'changePassword' %}">Change Password </a>
 			
 		</ul>
 		<br>

@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from store.models import Product, ReviewRatings
+from store.models import Product, ReviewRatings,ProductGallery
 from orders.models import OrderProduct,Order
 from .forms import ReviewForm
 from django.db.models import Q
@@ -43,7 +43,7 @@ def product_detail(request,category_slug,product_slug):
     # check product is ordered by user before posting reviews and rating
     if request.user.is_authenticated:
         try:
-            orderproduct=OrderProduct.objects.get(user=request.user,product=product).exists()
+            orderproduct=OrderProduct.objects.filter(user=request.user,product_id=product.id).exists()
         except OrderProduct.DoesNotExist:
             orderproduct=None
     else:
@@ -52,10 +52,14 @@ def product_detail(request,category_slug,product_slug):
     
     #get reviewsavg rating
     reviews=ReviewRatings.objects.filter(product=product,status=True)
+
+    #get product gallery
+    productgallery=ProductGallery.objects.filter(product=product)
     context={
         "product":product,
         "orderproduct":orderproduct,
-        "reviews":reviews
+        "reviews":reviews,
+        "productgallery":productgallery       
         }
 
     return render(request,"store/product-detail.html",context)

@@ -9,11 +9,21 @@
 			<div class="row no-gutters">
 				<aside class="col-md-6">
 					<article class="gallery-wrap">
-						<div class="img-big-wrap">
+						<div class="img-big-wrap mainImage">
 							<a href="#"><img src="{{ product.images.url }}" /></a>
 						</div>
 						<!-- img-big-wrap.// -->
 					</article>
+					<ul class="thumb">
+						<li>
+						<a href="{{ product.images.url }}"><img src="{{ product.images.url }}" /></a>
+						{% for i in productgallery %}
+						
+							<a href="{{i.images.url}}" target="mainImage"><img src="{{i.images.url}}" alt=""></a>
+						
+						{% endfor %}
+					</li>
+					</ul>
 					<!-- gallery-wrap .end// -->
 				</aside>
 				<main class="col-md-6 border-left">

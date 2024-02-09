@@ -75,3 +75,18 @@ class ReviewRatings(models.Model):
 
     def __str__(self):
         return self.subject
+    class Meta:
+        verbose_name='ReviewRatings'
+        verbose_name_plural='ReviewRatings'
+    
+
+class ProductGallery(models.Model):
+    product=models.ForeignKey(Product,on_delete=models.CASCADE)
+    images=models.ImageField(upload_to='photos/products')
+
+    def __str__(self):
+        return self.product.product_name
+    
+    class Meta:
+        verbose_name='ProductGallery'
+        verbose_name_plural='ProductGallery'
