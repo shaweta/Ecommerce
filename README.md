@@ -4,7 +4,7 @@
 It is an eCommerce application built with Python Django Framework. Some of the features of this project includes custom user model, categories and products, Carts, Incrementing, Decrementing and removing car items, Unlimited Product image gallery, Orders, Payments, after-order functionalities such as reduce the quantify of sold products, send the order received email, clearing the cart, Order completion page as well as generating an invoice for the order. Also we have a Review and Rating system with the interactive rating stars that even allows you to rate a half-star rating. My account functionalities for the customer who can easily edit his profile, profile pictures, change his account password, and also manage his orders and much more.
 
 
-<img src="![image](https://github.com/shaweta/Ecommerce/assets/17871651/66c73706-c680-4993-93bb-d5b6edb9ce99)">
+![image](https://github.com/shaweta/Ecommerce/assets/17871651/66c73706-c680-4993-93bb-d5b6edb9ce99)"
 <img src="![image](https://github.com/shaweta/Ecommerce/assets/17871651/4c2b54ae-b014-4b7f-a141-634c176ccd00)">
 <img src="![image](https://github.com/shaweta/Ecommerce/assets/17871651/f3bdf6a5-f311-4960-a2aa-e03b041fd26b)">
 <img src="![image](https://github.com/shaweta/Ecommerce/assets/17871651/32b8a5f6-7927-412a-ab53-c829610aed27)">
